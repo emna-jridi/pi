@@ -19,13 +19,14 @@ public class EtudiantController {
 @GetMapping
     public List<etudiant> getAllEtudiant (){
 return etudiantRepository.findAll();
-
     }
+
     // build creat etudiant rest api
     @PostMapping
     public etudiant creatEtudiant (@RequestBody etudiant etud){
 return etudiantRepository.save(etud);
     }
+
     // build get etud by rest api
     @GetMapping("{id}")
     public ResponseEntity<etudiant> getEtudiantById(@PathVariable long id){
